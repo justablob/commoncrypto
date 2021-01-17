@@ -7,6 +7,8 @@
 import random from "./random";
 import timing_safe_equal from "./timing_safe_equal";
 
+import * as _param from "./_param";
+
 import * as hash from "./hash";
 import * as symmetric from "./symmetric";
 import * as signature from "./signature";
@@ -17,6 +19,7 @@ const version = "1.0";
 
 export {
   version,
+  _param,
 
   random,
   timing_safe_equal,
@@ -30,6 +33,7 @@ export {
 
 export default {
   version,
+  _param,
 
   random,
   timing_safe_equal,
