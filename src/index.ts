@@ -12,6 +12,7 @@ import * as _param from "./_param";
 import * as hash from "./hash";
 import * as symmetric from "./symmetric";
 import * as signature from "./signature";
+import * as light_hash from "./light_hash";
 import * as key_exchange from "./key_exchange";
 import * as authenticated_symmetric from "./authenticated_symmetric";
 
@@ -27,6 +28,7 @@ export {
   hash,
   symmetric,
   signature,
+  light_hash,
   key_exchange,
   authenticated_symmetric,
 }
@@ -41,6 +43,7 @@ export default {
   ...hash,
   ...symmetric,
   ...signature,
+  ...light_hash,
   ...key_exchange,
   ...authenticated_symmetric
 }

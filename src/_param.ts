@@ -1,6 +1,9 @@
 export const HASH_ALGORITHM = "blake2b512";
 export const HASH_ALGORITHM_OUTPUT_LENGTH = 64;
 
+export const LIGHT_HASH_ALGORITHM = "blake2s256";
+export const LIGHT_HASH_ALGORITHM_OUTPUT_LENGTH = 32;
+
 export const SYMMETRIC_ALGORITHM = "chacha20";
 export const SYMMETRIC_ALGORITHM_KEY_LENGTH = 32;
 export const SYMMETRIC_ALGORITHM_IV_LENGTH = 16;
