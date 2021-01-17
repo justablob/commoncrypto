@@ -1,7 +1,7 @@
 {
   "name": "@justablob/commoncrypto",
   "author": "justablob <me@blob.dev>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./lib/index.js",
   "license": "LGPL-3.0-or-later",
   "private": false,
