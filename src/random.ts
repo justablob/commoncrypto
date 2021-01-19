@@ -6,7 +6,7 @@ function random(data: number | Buffer, offset?: number, size?: number): Buffer {
   if (Buffer.isBuffer(data)) {
     return crypto.randomFillSync(data, offset, size);
   } else {
-    return crypto.randomBytes(length);
+    return crypto.randomBytes(data);
   }
 }
 

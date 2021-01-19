@@ -4,6 +4,13 @@ export const HASH_ALGORITHM_OUTPUT_LENGTH = 64;
 export const LIGHT_HASH_ALGORITHM = "blake2s256";
 export const LIGHT_HASH_ALGORITHM_OUTPUT_LENGTH = 32;
 
+export const PASSWORD_ALGORITHM = "scrypt";
+export const PASSWORD_OUTPUT_LENGTH = 64;
+export const PASSWORD_SALT_LENGTH = 16;
+export const PASSWORD_PARAM_N = 10;
+export const PASSWORD_PARAM_R = 10;
+export const PASSWORD_PARAM_P = 1;
+
 export const SYMMETRIC_ALGORITHM = "chacha20";
 export const SYMMETRIC_ALGORITHM_KEY_LENGTH = 32;
 export const SYMMETRIC_ALGORITHM_IV_LENGTH = 16;
