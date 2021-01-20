@@ -25,7 +25,7 @@ function authenticated_symmetric_decrypt(key: Buffer, iv: Buffer, ciphertext: Bu
   if (aad) decipher.setAAD(aad, {} as any);
 
   let data_ciphertext = ciphertext.slice(0, -_param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH);
-  let tag_ciphertext = ciphertext.slice(_param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH);
+  let tag_ciphertext = ciphertext.slice(-_param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH);
 
   decipher.setAuthTag(tag_ciphertext);
   let output = decipher.update(data_ciphertext);
@@ -47,8 +47,8 @@ function authenticated_symmetric_encrypt_prefixed(key: Buffer, data: Buffer, aad
 }
 
 function authenticated_symmetric_decrypt_prefixed(key: Buffer, ciphertext: Buffer, aad?: Buffer): Buffer {
-  let iv = ciphertext.slice(0, 16);
-  let ciphertext_data = ciphertext.slice(16);
+  let iv = ciphertext.slice(0, _param.AUTHENTICATED_SYMMETRIC_ALGORITHM_IV_LENGTH);
+  let ciphertext_data = ciphertext.slice(_param.AUTHENTICATED_SYMMETRIC_ALGORITHM_IV_LENGTH);
 
   let output = authenticated_symmetric_decrypt(key, iv, ciphertext_data, aad);
 

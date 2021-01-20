@@ -30,8 +30,8 @@ function symmetric_encrypt_prefixed(key: Buffer, data: Buffer): Buffer {
 }
 
 function symmetric_decrypt_prefixed(key: Buffer, ciphertext: Buffer): Buffer {
-  let iv = ciphertext.slice(0, 16);
-  let ciphertext_data = ciphertext.slice(16);
+  let iv = ciphertext.slice(0, _param.SYMMETRIC_ALGORITHM_IV_LENGTH);
+  let ciphertext_data = ciphertext.slice(_param.SYMMETRIC_ALGORITHM_IV_LENGTH);
 
   let output = symmetric_decrypt(key, iv, ciphertext_data);
 
