@@ -43,7 +43,7 @@ function authenticated_symmetric_encrypt_prefixed(key: Buffer, data: Buffer, aad
 
   let output = authenticated_symmetric_encrypt(key, iv, data, aad);
 
-  return Buffer.concat([iv, output], iv.length + data.length);
+  return Buffer.concat([iv, output], iv.length + output.length);
 }
 
 function authenticated_symmetric_decrypt_prefixed(key: Buffer, ciphertext: Buffer, aad?: Buffer): Buffer {

@@ -26,7 +26,7 @@ function symmetric_encrypt_prefixed(key: Buffer, data: Buffer): Buffer {
 
   let output = symmetric_encrypt(key, iv, data);
 
-  return Buffer.concat([iv, output], iv.length + data.length);
+  return Buffer.concat([iv, output], iv.length + output.length);
 }
 
 function symmetric_decrypt_prefixed(key: Buffer, ciphertext: Buffer): Buffer {
