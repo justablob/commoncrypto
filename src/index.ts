@@ -4,6 +4,8 @@
 //                                      //
 //////////////////////////////////////////
 
+import { KeyObject } from "crypto";
+
 import random from "./random";
 import timing_safe_equal from "./timing_safe_equal";
 
@@ -21,6 +23,8 @@ import * as authenticated_symmetric from "./authenticated_symmetric";
 const version = "1.0";
 
 export {
+  KeyObject,
+
   version,
   _param,
 
@@ -38,6 +42,8 @@ export {
 }
 
 export default {
+  KeyObject,
+
   version,
   _param,
 
