@@ -8,7 +8,7 @@ function authenticated_symmetric_encrypt(key: Buffer, iv: Buffer, data: Buffer, 
   if (iv.length !== _param.AUTHENTICATED_SYMMETRIC_ALGORITHM_IV_LENGTH) throw "incorrect authenticated_symmetric_encrypt() parameter: iv";
 
   let cipher = crypto.createCipheriv(_param.AUTHENTICATED_SYMMETRIC_ALGORITHM, key, iv, { authTagLength: _param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH });
-  cipher.setAAD(aad, {} as any);
+  if (aad) cipher.setAAD(aad, {} as any);
 
   let ciphertext = cipher.update(data);
   cipher.final();
@@ -22,7 +22,7 @@ function authenticated_symmetric_decrypt(key: Buffer, iv: Buffer, ciphertext: Bu
   if (iv.length !== _param.AUTHENTICATED_SYMMETRIC_ALGORITHM_IV_LENGTH) throw "incorrect authenticated_symmetric_decrypt() parameter: iv";
 
   let decipher = crypto.createDecipheriv(_param.AUTHENTICATED_SYMMETRIC_ALGORITHM, key, iv, { authTagLength: _param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH });
-  decipher.setAAD(aad, {} as any);
+  if (aad) decipher.setAAD(aad, {} as any);
 
   let data_ciphertext = ciphertext.slice(0, -_param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH);
   let tag_ciphertext = ciphertext.slice(_param.AUTHENTICATED_SYMMETRIC_ALGOTITHM_TAG_LENGTH);
